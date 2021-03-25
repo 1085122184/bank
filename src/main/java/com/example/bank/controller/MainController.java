@@ -29,8 +29,8 @@ public class MainController {
         modelMap.put("zhxwList",zhxwService.getList());
         return "main";
     }
-    @RequestMapping("/file")
+    @RequestMapping("/test")
     public String file(ModelMap modelMap){
-        return "file";
+        return "index";
     }
 }
