@@ -16,8 +16,8 @@ public class FjController {
     FjService fjService;
 
     @RequestMapping("uploadFile")
-    public Map<String,Object> fileUpload(@RequestParam("uploadFile") MultipartFile uploadFile){
-        Map<String,Object> map =  fjService.saveFj(uploadFile,"zhgg","1");
+    public Map<String,Object> fileUpload(@RequestParam("file") MultipartFile file,String ywkey,String path){
+        Map<String,Object> map =  fjService.saveFj(file,path,ywkey);
         return map;
     }
 }

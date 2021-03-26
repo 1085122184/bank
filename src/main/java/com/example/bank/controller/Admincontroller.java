@@ -1,9 +1,10 @@
 package com.example.bank.controller;
 
+import cn.hutool.core.util.StrUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class Admincontroller {
@@ -16,8 +17,11 @@ public class Admincontroller {
 
     @RequestMapping("xxlr")
     public String add(String type, ModelMap modelMap){
+        modelMap.put("ywkey", StrUtil.uuid());
         modelMap.put("type",type);
         return "add";
     }
+
+
 
 }
