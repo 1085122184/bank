@@ -20,4 +20,19 @@ public class ZyggServiceImpl implements ZyggService {
     public List<Zygg> getListFour() {
         return zyggMapper.selectAllFour();
     }
+
+    @Override
+    public int save(Zygg zygg) {
+        return zyggMapper.insertSelective(zygg);
+    }
+
+    @Override
+    public int delete(String id) {
+        return zyggMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int update(Zygg zygg) {
+        return zyggMapper.updateByPrimaryKeySelective(zygg);
+    }
 }

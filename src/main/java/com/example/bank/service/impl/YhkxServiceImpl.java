@@ -16,4 +16,19 @@ public class YhkxServiceImpl implements YhkxService {
     public List<Yhkx> getList() {
         return yhkxMapper.selectAll();
     }
+
+    @Override
+    public int save(Yhkx yhkx) {
+        return yhkxMapper.insertSelective(yhkx);
+    }
+
+    @Override
+    public int delete(String id) {
+        return yhkxMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int update(Yhkx yhkx) {
+        return yhkxMapper.updateByPrimaryKeySelective(yhkx);
+    }
 }

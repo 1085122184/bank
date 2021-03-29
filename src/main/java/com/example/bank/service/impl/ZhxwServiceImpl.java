@@ -16,4 +16,19 @@ public class ZhxwServiceImpl implements ZhxwService {
     public List<Zhxw> getList() {
         return zhxwMapper.selectAll();
     }
+
+    @Override
+    public int save(Zhxw zhxw) {
+        return zhxwMapper.insertSelective(zhxw);
+    }
+
+    @Override
+    public int delete(String id) {
+        return zhxwMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int update(Zhxw zhxw) {
+        return zhxwMapper.updateByPrimaryKeySelective(zhxw);
+    }
 }

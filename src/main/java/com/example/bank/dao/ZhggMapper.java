@@ -3,6 +3,8 @@ package com.example.bank.dao;
 import com.example.bank.entity.Zhgg;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface ZhggMapper {
     /**
@@ -52,4 +54,6 @@ public interface ZhggMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Zhgg record);
+
+    List<Zhgg> selectAll();
 }
