@@ -9,4 +9,5 @@ public interface TbtjService {
     int save(Tbtj tbtj);
     int delete(String id);
     int update(Tbtj tbtj);
+    Tbtj getDetail(String id);
 }

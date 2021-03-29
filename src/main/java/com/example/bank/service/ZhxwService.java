@@ -9,4 +9,5 @@ public interface ZhxwService {
     int save(Zhxw zhxw);
     int delete(String id);
     int update(Zhxw zhxw);
+    Zhxw getDetail(String id);
 }

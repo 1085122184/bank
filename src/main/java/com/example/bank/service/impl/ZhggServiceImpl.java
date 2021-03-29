@@ -34,4 +34,9 @@ public class ZhggServiceImpl implements ZhggService {
     public int update(Zhgg zhgg) {
         return zhggMapper.updateByPrimaryKeySelective(zhgg);
     }
+
+    @Override
+    public Zhgg getDetail(String id) {
+        return zhggMapper.selectByPrimaryKey(id);
+    }
 }

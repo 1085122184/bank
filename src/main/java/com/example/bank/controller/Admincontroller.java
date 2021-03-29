@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Map;
+
 
 @Controller
 public class Admincontroller {
@@ -34,6 +36,62 @@ public class Admincontroller {
     public String add(String type, ModelMap modelMap){
         modelMap.put("ywkey", StrUtil.uuid());
         modelMap.put("type",type);
+        modelMap.put("sign","add");
+        return "add";
+    }
+
+    @RequestMapping("getList")
+    public String getList(String type,ModelMap map){
+        switch (type){
+            case "tbtj":
+                map.put("type",type);
+                map.put("list",tbtjService.getList());
+                break;
+            case "yhkx":
+                map.put("type",type);
+                map.put("list",yhkxService.getList());
+                break;
+            case "zygg":
+                map.put("type",type);
+                map.put("list",zyggService.getList());
+                break;
+            case "zhgg":
+                map.put("type",type);
+                map.put("list",zhggService.getList());
+                break;
+            case "zhxw":
+                map.put("type",type);
+                map.put("list",zhxwService.getList());
+                break;
+        }
+        return "list";
+    }
+
+    @RequestMapping("edit")
+    public String edit(String id,String type,ModelMap map){
+        map.put("sign","edit");
+        switch (type){
+            case "tbtj":
+                map.put("type",type);
+                map.put("object",tbtjService.getDetail(id));
+                break;
+            case "yhkx":
+                map.put("type",type);
+                map.put("object",yhkxService.getDetail(id));
+                break;
+            case "zygg":
+                map.put("type",type);
+                map.put("object",zyggService.getDetail(id));
+                break;
+            case "zhgg":
+                map.put("type",type);
+                map.put("object",zhggService.getDetail(id));
+                break;
+            case "zhxw":
+                map.put("type",type);
+                map.put("object",zhxwService.getDetail(id));
+                break;
+        }
         return "add";
     }
 

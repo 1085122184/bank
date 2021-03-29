@@ -31,4 +31,9 @@ public class YhkxServiceImpl implements YhkxService {
     public int update(Yhkx yhkx) {
         return yhkxMapper.updateByPrimaryKeySelective(yhkx);
     }
+
+    @Override
+    public Yhkx getDetail(String id) {
+        return yhkxMapper.selectByPrimaryKey(id);
+    }
 }

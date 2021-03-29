@@ -10,4 +10,5 @@ public interface ZyggService {
     int save(Zygg zygg);
     int delete(String id);
     int update(Zygg zygg);
+    Zygg getDetail(String id);
 }

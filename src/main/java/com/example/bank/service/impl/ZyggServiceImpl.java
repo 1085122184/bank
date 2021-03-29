@@ -35,4 +35,9 @@ public class ZyggServiceImpl implements ZyggService {
     public int update(Zygg zygg) {
         return zyggMapper.updateByPrimaryKeySelective(zygg);
     }
+
+    @Override
+    public Zygg getDetail(String id) {
+        return zyggMapper.selectByPrimaryKey(id);
+    }
 }

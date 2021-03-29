@@ -31,4 +31,9 @@ public class TbtjServiceImpl implements TbtjService {
     public int update(Tbtj tbtj) {
         return tbtjMapper.updateByPrimaryKeySelective(tbtj);
     }
+
+    @Override
+    public Tbtj getDetail(String id) {
+        return tbtjMapper.selectByPrimaryKey(id);
+    }
 }

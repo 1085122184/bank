@@ -31,4 +31,9 @@ public class ZhxwServiceImpl implements ZhxwService {
     public int update(Zhxw zhxw) {
         return zhxwMapper.updateByPrimaryKeySelective(zhxw);
     }
+
+    @Override
+    public Zhxw getDetail(String id) {
+        return zhxwMapper.selectByPrimaryKey(id);
+    }
 }

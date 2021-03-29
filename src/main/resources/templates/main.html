@@ -71,7 +71,7 @@
                             <li><a href="http://map.cmbchina.com/" target="_blank" cname="顶部导航" oname="服务网点" otype="文字链接">
                                 服务网点</a></li>
                             <li>|</li>
-                            <li><a href="javascript:fLoginICS();" cname="顶部导航" oname="在线客服" otype="文字链接">在线客服</a></li>
+                            <li><a href="javascript:fLoginICS();" cname="顶部导航" oname="留言反馈" otype="文字链接">留言反馈</a></li>
                             <li>|</li>
                         </ul>
                     </div>
@@ -455,8 +455,6 @@
         SelectMenu(tabIndex);
     </script>
 
-    <input type="file" id="file">
-    <button onclick="upload()">上传</button>
 
     <div id="container">
         <div id="column_left">
@@ -536,21 +534,6 @@
             <script th:src="@{Scripts/YUI.js}" type="text/javascript"></script>
 
             <script type="text/javascript">
-                function  upload() {
-                    var url="/file/uploadFile";//上传地址
-                    formData = new FormData();//uploadFile就是后台接收的文件参数名称
-                    formData.append('uploadFile', $('#file')[0].files[0]);
-                    jQuery.ajax({
-                        type: 'post',
-                        url: url,
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        success: function (data) {
-                            alert("success");
-                        }
-                    })
-                }
                 function Each(list, fun) {
                     for (var i = 0, len = list.length; i < len; i++) { fun(list[i], i); }
                 };

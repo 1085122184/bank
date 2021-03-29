@@ -9,4 +9,5 @@ public interface ZhggService {
     int save(Zhgg zhgg);
     int delete(String id);
     int update(Zhgg zhgg);
+    Zhgg getDetail(String id);
 }

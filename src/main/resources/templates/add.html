@@ -25,16 +25,16 @@
     <body>
         <div class="layui-fluid">
 
-            <div class="layui-row" th:switch="${type}">
+            <div class="layui-row" th:switch="${type}" th:if="${sign=='edit'}">
                 <!--                特别推介表单-->
                 <form class="layui-form" th:case="'tbtj'">
-                    <input name="id" th:value="${ywkey}">
+                    <input name="id" th:value="${object.id}">
                     <div class="layui-form-item">
                         <label for="tbtjbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
                         </label>
                         <div class="layui-input-inline">
-                            <input type="text" id="tbtjbt" name="bt" required="" lay-verify="required"
+                            <input th:value="${object.bt}" type="text" id="tbtjbt" name="bt" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-form-mid layui-word-aux">
@@ -46,7 +46,7 @@
                             <span class="x-red">*</span>链接地址
                         </label>
                         <div class="layui-input-inline">
-                            <input type="text" id="tbtjurl" name="url" required="" lay-verify="phone"
+                            <input th:value="${object.url}" type="text" id="tbtjurl" name="url" required="" lay-verify="phone"
                                    autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-form-mid layui-word-aux">
@@ -61,7 +61,7 @@
                 </form>
                 <!--                优惠快讯表单-->
                 <form class="layui-form" th:case="'yhkx'">
-                    <input name="id" th:value="${ywkey}">
+                    <input name="id" th:value="${object.id}">
                     <div class="layui-form-item">
                         <label class="layui-form-label">
                             <span class="x-red">*</span>所在分类
@@ -82,7 +82,189 @@
                             <span class="x-red">*</span>标题
                         </label>
                         <div class="layui-input-inline">
-                            <input type="text" id="yhkxbt" name="bt" required="" lay-verify="required"
+                            <input type="text" th:value="${object.bt}" id="yhkxbt" name="bt" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>优惠快讯标题
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class="x-red">*</span>图片上传
+                        </label>
+                        <div class="layui-input-inline">
+                            <button type="button" class="layui-btn layui-btn-danger" id="test7"><i class="layui-icon"></i>上传图片</button>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>优惠快讯图片上传
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <button  class="layui-btn" lay-filter="add" lay-submit="">
+                            增加
+                        </button>
+                    </div>
+                </form>
+                <!--                重要公告表单-->
+                <form class="layui-form" th:case="'zygg'">
+                    <input name="id" th:value="${object.id}">
+                    <div class="layui-form-item">
+                        <label for="zyggbt" class="layui-form-label">
+                            <span class="x-red">*</span>标题
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="text" th:value="${object.bt}" id="zyggbt" name="bt" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>重要公告标题
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="zyggzw" class="layui-form-label">
+                            <span class="x-red">*</span>正文内容
+                        </label>
+                        <div class="layui-input-inline">
+                            <textarea th:value="${object.zw}" id="zyggzw" name="zw" required="" lay-verify="phone"
+                                      autocomplete="off" class="layui-textarea"></textarea>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>重要公告正文内容
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <button  class="layui-btn" lay-filter="add" lay-submit="">
+                            增加
+                        </button>
+                    </div>
+                </form>
+                <!--                招行公告表单-->
+                <form class="layui-form" th:case="'zhgg'">
+                    <input name="id" th:value="${object.id}">
+                    <div class="layui-form-item">
+                        <label for="zhggbt" class="layui-form-label">
+                            <span class="x-red">*</span>标题
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="text" th:value="${object.bt}" id="zhggbt" name="bt" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>招行公告标题
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class="x-red">*</span>文件上传
+                        </label>
+                        <div class="layui-input-inline">
+                            <button type="button" class="layui-btn" id="test7"><i class="layui-icon"></i>上传文件</button>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>招行公告文件上传
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <button  class="layui-btn" lay-filter="add" lay-submit="">
+                            增加
+                        </button>
+                    </div>
+                </form>
+                <!--                招行新闻表单-->
+                <form class="layui-form" th:case="'zhxw'">
+                    <input name="id" th:value="${object.id}">
+                    <div class="layui-form-item">
+                        <label for="zhxwbt" class="layui-form-label">
+                            <span class="x-red">*</span>标题
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="text" th:value="${object.bt}" id="zhxwbt" name="bt" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>招行新闻标题
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="zyggzw" class="layui-form-label">
+                            <span class="x-red">*</span>正文内容
+                        </label>
+                        <div class="layui-input-inline">
+                            <textarea th:value="${object.zw}" id="zhxwzw" name="zw" required="" lay-verify="required"
+                                      autocomplete="off" class="layui-textarea"></textarea>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>招行新闻正文内容
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <button  class="layui-btn" lay-filter="add" lay-submit="">
+                            增加
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="layui-row" th:switch="${type}" th:if="${sign=='add'}">
+                <!--                特别推介表单-->
+                <form class="layui-form" th:case="'tbtj'">
+                    <input name="id" th:value="${ywkey}">
+                    <div class="layui-form-item">
+                        <label for="tbtjbt" class="layui-form-label">
+                            <span class="x-red">*</span>标题
+                        </label>
+                        <div class="layui-input-inline">
+                            <input  type="text" id="tbtjbt" name="bt" required="" lay-verify="required"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>特别推介标题
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="tbtjurl" class="layui-form-label">
+                            <span class="x-red">*</span>链接地址
+                        </label>
+                        <div class="layui-input-inline">
+                            <input  type="text" id="tbtjurl" name="url" required="" lay-verify="phone"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>特别推介链接地址
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <button  class="layui-btn" lay-filter="add" lay-submit="">
+                            增加
+                        </button>
+                    </div>
+                </form>
+                <!--                优惠快讯表单-->
+                <form class="layui-form" th:case="'yhkx'">
+                    <input name="id" th:value="${ywkey}">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class="x-red">*</span>所在分类
+                        </label>
+                        <div class="layui-input-inline">
+                            <select name="pid" lay-filter="yhkxlx">
+                                <option value=""></option>
+                                <option value="0">一卡通</option>
+                                <option value="1" selected="">信用卡</option>
+                            </select>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>优惠快讯分类
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="yhkxbt" class="layui-form-label">
+                            <span class="x-red">*</span>标题
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="text"  id="yhkxbt" name="bt" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-form-mid layui-word-aux">
@@ -210,7 +392,14 @@
         <script th:inline="javascript">
             var type = [[${type}]];
             var ywkey = [[${ywkey}]];
-            var url = type+"Add";
+            var sign = [[${sign}]];
+            var url ;
+            if (sign==="add"){
+                url = type+"Add";
+            }
+            if (sign==="edit"){
+                url = type+"Edit";
+            }
         </script>
         <script >
             layui.use('upload', function(){
@@ -255,8 +444,7 @@
                         contentType:'application/json;charset=utf-8',
                         dataType: "json",
                         success: function(data){
-                            //发异步，把数据提交给php
-                            layer.alert("增加成功", {
+                            layer.alert("操作成功", {
                                     icon: 6
                                 },
                                 function() {
