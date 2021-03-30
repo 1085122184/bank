@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Map;
 
 
 @Controller
@@ -26,9 +25,13 @@ public class Admincontroller {
     @Autowired
     ZhxwService zhxwService;
 
+    @RequestMapping("adminLogin")
+    public String adminLogin(){
+        return "logins";
+    }
+
     @RequestMapping("admin")
     public String admin(){
-
         return "index";
     }
 

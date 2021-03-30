@@ -37,7 +37,7 @@ public class FjServiceImpl implements FjService {
             Fj fj = new Fj();
             fj.setCcmc(StrUtil.uuid()+"."+kzm);
             fj.setFilename(multipartFile.getOriginalFilename());
-            fj.setWjdx(multipartFile.getBytes().length);
+            fj.setWjdx(multipartFile.getBytes().length/1024);
             fj.setXdpath(path);
             fj.setYwkey(ywkey);
             fjMapper.insert(fj);

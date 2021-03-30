@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en" class="x-admin-sm" >
+<html xmlns:th="http://www.thymeleaf.org" lang="en" class="x-admin-sm"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
     <head>
         <meta charset="UTF-8">
         <title>后台登录-X-admin2.2</title>
@@ -63,11 +63,11 @@
                         <dd>
                             <a onclick="xadmin.open('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
                         <dd>
-                            <a href="./login.html">退出</a></dd>
+                            <a href="./logins.html">退出</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item to-index">
-                    <a href="/">前台首页</a></li>
+                    <a href="/index">前台首页</a></li>
             </ul>
         </div>
         <!-- 顶部结束 -->

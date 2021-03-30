@@ -8,7 +8,7 @@
     <link rel="Shortcut Icon" href="http://www.cmbchina.com/cmb.ico"><link rel="Bookmark" href="http://www.cmbchina.com/cmb.ico"><link rel="apple-touch-icon" sizes="72x72" href="http://www.cmbchina.com/touch-icon-ipad.png"><link th:href="@{Styles/Common.css}" rel="stylesheet" type="text/css"><link th:href="@{Styles/header.css}" rel="stylesheet" type="text/css"><link th:href="@{Styles/footer.css}" rel="stylesheet" type="text/css"><meta name="baidu-site-verification" content="prEJCYtyPU">
     <meta name="mobile-agent" content="format=html5;url=http://m.cmbchina.com">
     <meta name="status-check" content="@CMBOK@"><meta name="keywords" content="招商银行, 招行,招商银行官方网站,招商银行官网, China Merchants Bank, CMB, 一网通, 网上银行, 电话银行, 手机银行, 手机网站, 手机一网通, 掌上银行, 一卡通, 信用卡, 金葵花卡, 财富账户, 储蓄, 贷款, 汇款, 客户服务, 证券, 基金, 外汇, 商城, 房城, 理财, 黄金, 社区, 企业银行, 资产托管, 企业年金, 招行新闻, 招行公告, 营业网点, 酒店预订, 机票预订, 利率, 人才招聘, China Merchants Bank, CMB, @CMBOK@"><meta name="description" content="招商银行官方网站。办理卡片申请,智能存款,转账汇款,网上支付,投资理财,贷款消费,信用卡还款,生活缴费,外汇买卖,实时利率,汇率查询,公司理财,企业贷款等业务,享受一站式综合金融服务！更可登录网上银行,手机银行,尽享24小时在线便利金融服务！@CMBOK@"><script></script><script th:src="@{scriipts/sdc_cmb.js}"></script></head>
-<body style="background: url(&quot;/images/bg.gif&quot;) center top no-repeat rgb(255, 255, 255);">
+<body style="background: url(/images/bg.gif) center top no-repeat rgb(255, 255, 255);">
 <form method="post" action="http://www.cmbchina.com/default.aspx" id="form1">
     <div class="aspNetHidden">
         <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODI2MzQxNzYyZGT1SH5FLsoSsSNjeBdPaAds3VHAxH7WIKz5UhJMUys72w==">
@@ -78,7 +78,7 @@
                 </td>
                 <td width="65">
                     <div id="maplink" class="map_link" onmouseover="showNavList(this)" onmouseout="hideNavList()" cname="顶部导航" oname="网站导航" otype="文字链接">网站导航<span style="line-height: 20px;
-                        height: 20px;"><img src="./一网通主页 -- 招商银行官方网站_files/arrow_01.gif" width="8" height="4" border="0" align="middle"></span></div>
+                        height: 20px;"><img th:src="@{images/arrow_01.gif}" width="8" height="4" border="0" align="middle"></span></div>
                 </td>
             </tr>
             </tbody></table>
@@ -303,7 +303,7 @@
             </div>
             <div class="main_online">
                 <a href="http://www.cmbchina.com/CustomerService/Default.aspx" target="_blank">
-                    <img src="./一网通主页 -- 招商银行官方网站_files/main_95555.gif" border="0"></a></div>
+                    <img th:src="@{images/main_95555.gif}" border="0"></a></div>
         </div>
         <div class="submenubg" id="subMenuItems" onmouseout="HideSubMenu(event, this)">
             <div class="sub_menu" id="sub_menu_1" style="display: block;">
@@ -467,7 +467,7 @@
                     <div>
                         <div class="sub_new_ad_common" id="item1">
                     <a th:href="${tbtjList.url}" th:text="${tbtjList.bt}" target="_blank" cname="特别推介" oname="招商银行App下载" otype="文字链接">
-                       </a></span>
+                       </a>
                         </div>
                     </div>
                 </div>
@@ -481,7 +481,7 @@
                     <ul class="Slides" id="Slides" style="height: 185px;">
 
                         <li style="width: 530px; height: 185px;"><a href="https://market.cmbchina.com/MPage/online/210312154353374/web/index.html" target="_blank" cname="主广告位--main01" oname="" otype="图片链接">
-                            <img title="" style="width: 530px; height: 185px; display: none; opacity: -0.01;" src="./一网通主页 -- 招商银行官方网站_files/30652f7f-f8b3-4423-ad8e-079303d36658.jpg"></a>
+                            <img title="" style="width: 530px; height: 185px; display: none; opacity: -0.01;" th:src="@{images/30652f7f-f8b3-4423-ad8e-079303d36658.jpg}"></a>
                         </li>
 
                         <li style="width: 530px; height: 185px;"><a href="http://www.cmbchina.com/#" target="_self" cname="主广告位--main01" oname="" otype="图片链接">
@@ -697,7 +697,7 @@
             <div style="height: 8px!important; height: 7px; overflow: hidden">
             </div>
             <a href="http://www.cmbchina.com/CustomerService/" target="_blank" cname="客户服务" oname="客户服务" otype="文字链接">
-                <img width="209" height="79" alt="客户服务" src="./一网通主页 -- 招商银行官方网站_files/main_cs2020.jpg" border="0"></a>
+                <img width="209" height="79" alt="客户服务" th:src="@{images/main_cs2020.jpg}" border="0"></a>
 
             <div style="height: 8px!important; height: 4px; overflow: hidden">
             </div>
@@ -712,32 +712,32 @@
                             <tbody><tr>
                                 <td style="width: 92px;">
                                     <a href="http://www.cmbchina.com/CustomerService/CustomerServiceInfo.aspx?pageid=xzfwbd" target="_blank" cname="便捷服务" oname="小招服务宝典" otype="文字链接">
-                                        <img style="border: 0px; width: 43px; height: 43px;" src="./一网通主页 -- 招商银行官方网站_files/fwbd2020.jpg"></a><div>
+                                        <img style="border: 0px; width: 43px; height: 43px;" th:src="@{images/fwbd2020.jpg}"></a><div>
                                     <a href="http://www.cmbchina.com/CustomerService/CustomerServiceInfo.aspx?pageid=xzfwbd" target="_blank" cname="便捷服务" oname="小招服务宝典" otype="文字链接">小招服务宝典</a></div>
                                 </td>
                                 <td style="width: 92px;">
                                     <a href="http://t.sina.com.cn/cmbchina" target="_blank" cname="便捷服务" oname="微博" otype="文字链接">
-                                        <img style="border: 0px; width: 43px; height: 43px;" src="./一网通主页 -- 招商银行官方网站_files/toolbox_wb2020.jpg"></a><div>
+                                        <img style="border: 0px; width: 43px; height: 43px;" th:src="@{images/toolbox_wb2020.jpg}"></a><div>
                                     <a href="http://t.sina.com.cn/cmbchina" target="_blank" cname="便捷服务" oname="微博" otype="文字链接">微博</a></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="width: 92px;">
                                     <a href="http://map.cmbchina.com/" target="_blank" cname="便捷服务" oname="网点地图" otype="文字链接">
-                                        <img style="border: 0px; width: 43px; height: 43px;" src="./一网通主页 -- 招商银行官方网站_files/toolbox_map2020.jpg"></a><div>
+                                        <img style="border: 0px; width: 43px; height: 43px;" th:src="@{images/toolbox_map2020.jpg}"></a><div>
                                     <a href="http://map.cmbchina.com/" target="_blank" cname="便捷服务" oname="网点地图" otype="文字链接">
                                         网点地图</a></div>
                                 </td>
                                 <td>
                                     <a href="http://www.cmbchina.com/Customerservice/customerserviceinfo.aspx?pageid=calculator" target="_blank" cname="便捷服务" oname="理财计算器" otype="文字链接">
-                                        <img style="border: 0px; width: 43px; height: 43px;" src="./一网通主页 -- 招商银行官方网站_files/toolbox_jsq2020.jpg"></a><div>
+                                        <img style="border: 0px; width: 43px; height: 43px;" th:src="@{images/toolbox_jsq2020.jpg}"></a><div>
                                     <a href="http://www.cmbchina.com/Customerservice/customerserviceinfo.aspx?pageid=calculator" target="_blank" cname="便捷服务" oname="理财计算器" otype="文字链接">理财计算器</a></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <a href="http://market.cmbchina.com/ccard/xjgdlqpc/" target="_blank" cname="便捷服务" oname="积分奖励" otype="文字链接">
-                                        <img style="border: 0px; width: 43px; height: 43px;" src="./一网通主页 -- 招商银行官方网站_files/toolbox_ccclub2020.jpg"></a><div>
+                                        <img style="border: 0px; width: 43px; height: 43px;" th:src="@{images/toolbox_ccclub2020.jpg}"></a><div>
                                     <a href="http://market.cmbchina.com/ccard/xjgdlqpc/" target="_blank" cname="便捷服务" oname="积分奖励" otype="文字链接">积分奖励</a></div>
                                 </td>
                                 <td>&nbsp;</td>
@@ -1138,7 +1138,7 @@
                 <div class="whitebgtop">
                     &nbsp;</div>
                 <div class="whitebgmid" style="height: 100px !important; height:106px; text-align: center;">
-                    <iframe frameborder="0" height="100px" scrolling="no" width="186px" src="./一网通主页 -- 招商银行官方网站_files/stockinfo.html"> </iframe>
+                    <iframe frameborder="0" height="100px" scrolling="no" width="186px" th:src="@{images/stockinfo.html}"> </iframe>
                 </div>
                 <div class="whitebgbottom">
                 </div>
@@ -1158,7 +1158,7 @@
                                 <span>一卡通</span></h2>
                             <div class="m_notice_more">
                                 <a href="http://www.cmbchina.com/Personal/Promotion/default.aspx" target="_blank">
-                                    <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                    <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                         </div>
                         <div class="m_con_info" style="height:150px">
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -1180,7 +1180,7 @@
                                 <span>信用卡</span></h2>
                             <div class="m_specialsale_more">
                                 <a href="http://cc.cmbchina.com/Promotion/" target="_blank">
-                                    <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg" alt="" border="0"></a></div>
+                                    <img class="common_img_more" th:src="@{images/more.jpg}" alt="" border="0"></a></div>
                         </div>
                         <div id="icefable11" class="m_con_info" style="height:150px">
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -1283,7 +1283,7 @@
                             <span>热销理财产品</span></h2>
                         <div class="m_finance_more">
                             <a href="http://www.cmbchina.com/cfweb/" cname="财富管理--理财产品" oname="更多" otype="文字链接" target="_blank">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                         <div style="clear:both"></div>
                         <div class="m_finance_info">
 
@@ -1298,7 +1298,7 @@
                         </div>
                         <div class="m_finance_more">
                             <a href="http://www.cmbchina.com/cfweb/" target="_blank" cname="财富管理--理财产品" oname="more" otype="文字链接">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                     </div>
                     <div class="m_finance_midline">
                     </div>
@@ -1336,7 +1336,7 @@
                             <span>热销基金</span></h2>
                         <div class="m_finance_more">
                             <a href="http://fund.cmbchina.com/openfund" target="_blank" cname="财富管理--基金" oname="更多" otype="文字链接">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                         <div style="clear:both"></div>
                         <div class="m_finance_info">
                             <table id="ContentPlaceHolder1_FinanceIndex1_Fund1_listfund" cellspacing="0" style="width:100%;border-collapse:collapse;">
@@ -1427,13 +1427,13 @@
                             <span>推荐产品</span></h2>
                         <div class="m_finance_more">
                             <a href="http://gold.cmbchina.com/Products/SearchList.aspx" target="_blank" cname="财富管理--黄金" oname="更多" otype="文字链接">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                         <div style="clear:both"></div>
                         <div class="m_finance_info">
 
                             <div class="goldProduct">
                                 <a href="http://gold.cmbchina.com/Products/ProductDetail.aspx?PrdCode=FJ054GLD0018K0025" target="_blank" title="金鸡报福五帝送财金钱套装" cname="财富管理--黄金" oname="金鸡报福五帝送财金钱套装" otype="文字链接">
-                                    <img class="prdImg" src="./一网通主页 -- 招商银行官方网站_files/903cde28-c81e-4695-9dcd-58be4cec93b1.jpg" alt="金鸡报福五帝送财金钱套装">
+                                    <img class="prdImg" th:src="@{images/903cde28-c81e-4695-9dcd-58be4cec93b1.jpg}" alt="金鸡报福五帝送财金钱套装">
                                 </a>
                                 <div class="textLine">
                                     <a href="http://gold.cmbchina.com/Products/ProductDetail.aspx?PrdCode=FJ054GLD0018K0025" target="_blank" title="金鸡报福五帝送财金钱套装" cname="财富管理--黄金" oname="金鸡报福五帝送财金钱套装" otype="文字链接">
@@ -1601,7 +1601,7 @@
                             <span>热销存款产品</span></h2>
                         <div class="m_finance_more">
                             <a href="http://www.cmbchina.com/cfweb/sd/default.aspx" cname="财富管理--存款产品" oname="更多" otype="文字链接" target="_blank">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                         <div style="clear:both"></div>
                         <div class="m_finance_info">
 
@@ -1628,7 +1628,7 @@
                         </div>
                         <div class="m_finance_more">
                             <a href="http://www.cmbchina.com/cfweb/sd/default.aspx" target="_blank" cname="财富管理--存款产品" oname="more" otype="文字链接">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                     </div>
                     <div class="m_finance_midline">
                     </div>
@@ -1797,7 +1797,7 @@
                         </div>
                         <div class="m_con_more">
                             <a href="http://www.cmbchina.com/cmbinfo/news/">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                     </div>
                     <div class="m_con_midline_cmbinfo">
                     </div>
@@ -1819,7 +1819,7 @@
                         </div>
                         <div class="m_con_more">
                             <a href="http://www.cmbchina.com/cmbir/" cname="招行公告" oname="更多" otype="文字链接">
-                                <img class="common_img_more" src="./一网通主页 -- 招商银行官方网站_files/more.jpg"></a></div>
+                                <img class="common_img_more" th:src="@{images/more.jpg}"></a></div>
                     </div>
                 </div>
             </div>
@@ -1880,7 +1880,7 @@
         <tbody><tr>
             <td width="15%" style="text-align: center" rowspan="2" valign="top">
                 <br>
-                <img src="./一网通主页 -- 招商银行官方网站_files/2-dbarcode.png" border="0" alt="手机一网通二维码"><br>
+                <img th:src="@{images/2-dbarcode.png}" border="0" alt="手机一网通二维码"><br>
                 <div style="font-size: 12px; font-weight: bold; height: 25px; line-height: 15px;
                 margin-top: 10px;">
                     手机一网通<br>
@@ -1946,25 +1946,25 @@
                     <tbody><tr>
                         <td align="center">
                             <a target="_blank" href="http://szcert.ebs.org.cn/418b33e0-18a9-4206-bb61-1c201322a400">
-                                <img src="./一网通主页 -- 招商银行官方网站_files/gongshang.jpg" border="0" alt="工商网监标志"></a>
+                                <img th:src="@{images/gongshang.jpg}" border="0" alt="工商网监标志"></a>
                         </td>
                         <td width="15">
                         </td>
                         <td align="center">
                             <a target="_blank" href="http://www.cmbchina.com/webpages/cmbsafe/index.htm">
-                                <img src="./一网通主页 -- 招商银行官方网站_files/wangan.gif" border="0" alt="网络安全标志"></a>
+                                <img th:src="@{images/wangan.gif}" border="0" alt="网络安全标志"></a>
                         </td>
                         <td width="15">
                         </td>
                         <td align="center">
                             <a href="http://www.sznet110.gov.cn/netalarm/index.jsp" target="_blank">
-                                <img src="./一网通主页 -- 招商银行官方网站_files/sz_police.gif" border="0" alt="网络安全标志"></a>
+                                <img th:src="@{images/sz_police.gif}" border="0" alt="网络安全标志"></a>
                         </td>
                         <td align="center">
-                            <a id="___szfw_logo___" href="https://search.szfw.org/cert/l/CX20120110001800001833" target="_blank"><img src="./一网通主页 -- 招商银行官方网站_files/chengxinlogo.png" border="0" alt="诚信网站"></a>
+                            <a id="___szfw_logo___" href="https://search.szfw.org/cert/l/CX20120110001800001833" target="_blank"><img th:src="@{images/chengxinlogo.png}" border="0" alt="诚信网站"></a>
                         </td>
                         <td><a href="https://ss.knet.cn/verifyseal.dll?sn=e13073144030041836wa7c000000&amp;ct=df&amp;a=1&amp;pa=500267" tabindex="-1" id="urlknet" target="_blank">
-                            <img alt="可信网站" name="CNNIC_seal" border="true" src="./一网通主页 -- 招商银行官方网站_files/knetseallogo.png" oncontextmenu="return false;" onclick="CNNIC_change(&#39;urlknet&#39;)"></a></td>
+                            <img alt="可信网站" name="CNNIC_seal" border="true" th:src="@{images/knetseallogo.png}" oncontextmenu="return false;" onclick="CNNIC_change(&#39;urlknet&#39;)"></a></td>
                         <td align="center" class="FooterGray">
                             招商银行一网通 创建于一九九七年
                             <br>
