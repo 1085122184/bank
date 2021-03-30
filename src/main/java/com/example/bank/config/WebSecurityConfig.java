@@ -50,26 +50,6 @@ public class WebSecurityConfig {
                     .and()
                     .csrf()
                     .disable();
-//            http.formLogin() // 表单登录
-//                    // http.httpBasic() // HTTP Basic
-//                    .loginPage("/adminLogin")// 登录跳转 URL
-////                    .loginProcessingUrl("/login") // 处理表单登录 URL
-////                    .successHandler(successHandler) // 处理登录成功
-//                    .defaultSuccessUrl("/admin").permitAll()
-//                    .and()
-//                    .authorizeRequests() // 授权配置
-//                    .antMatchers("/index").permitAll()
-//                    .antMatchers("/css/**").permitAll()
-//                    .antMatchers("/fonts/**").permitAll()
-//                    .antMatchers("/images/**").permitAll()
-//                    .antMatchers("/js/**").permitAll()
-//                    .antMatchers("/lib/**").permitAll()
-//                    .antMatchers("/scriipts/**").permitAll()
-//                    .antMatchers("/Scripts/**").permitAll()
-//                    .antMatchers("/Styles/**").permitAll()
-//                    .anyRequest()  // 所有请求
-//                    .authenticated() // 都需要认证
-//                    .and().csrf().disable();
         }
 
         @Override
