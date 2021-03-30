@@ -29,6 +29,12 @@ public class MainController {
         modelMap.put("zhxwList",zhxwService.getList());
         return "main";
     }
+
+    @RequestMapping("/index/title")
+    public String title(ModelMap modelMap){
+        return "zhxw";
+    }
+
     @RequestMapping("/test")
     public String file(ModelMap modelMap){
         return "index";

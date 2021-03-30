@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.ForwardAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -23,12 +24,14 @@ public class WebSecurityConfig {
         @Autowired
         @Qualifier("databaseUserDetailsService")
         private DatabaseUserDetailsService userDetailsService;
-
+        @Autowired
+        private ValidateCodeFilter validateCodeFilter;
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests()
-                    .antMatchers("/index").permitAll()
+            http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
+                    .authorizeRequests()
+                    .antMatchers("/index/**").permitAll()
                     .antMatchers("/css/**").permitAll()
                     .antMatchers("/fonts/**").permitAll()
                     .antMatchers("/images/**").permitAll()
@@ -36,7 +39,7 @@ public class WebSecurityConfig {
                     .antMatchers("/lib/**").permitAll()
                     .antMatchers("/scriipts/**").permitAll()
                     .antMatchers("/Scripts/**").permitAll()
-                    .antMatchers("/Styles/**").permitAll()
+                    .antMatchers("/Styles/**","/code/image").permitAll()
                     .anyRequest()
                     .authenticated()
                     .and()
