@@ -31,7 +31,16 @@ public class MainController {
     }
 
     @RequestMapping("/index/title")
-    public String title(ModelMap modelMap){
+    public String title(ModelMap modelMap,String id,String type){
+        switch (type){
+            case "zhxw":
+                modelMap.put("object",zhxwService.getDetail(id));
+                break;
+            case "zygg":
+                modelMap.put("object",zyggService.getDetail(id));
+                break;
+        }
+        modelMap.put("type",type);
         return "zhxw";
     }
 

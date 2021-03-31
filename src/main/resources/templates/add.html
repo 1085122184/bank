@@ -28,7 +28,7 @@
             <div class="layui-row" th:switch="${type}" th:if="${sign=='edit'}">
                 <!--                特别推介表单-->
                 <form class="layui-form" th:case="'tbtj'">
-                    <input name="id" th:value="${object.id}">
+                    <input name="id" type="hidden" th:value="${object.id}">
                     <div class="layui-form-item">
                         <label for="tbtjbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -61,7 +61,7 @@
                 </form>
                 <!--                优惠快讯表单-->
                 <form class="layui-form" th:case="'yhkx'">
-                    <input name="id" th:value="${object.id}">
+                    <input name="id" type="hidden" th:value="${object.id}">
                     <div class="layui-form-item">
                         <label class="layui-form-label">
                             <span class="x-red">*</span>所在分类
@@ -108,7 +108,7 @@
                 </form>
                 <!--                重要公告表单-->
                 <form class="layui-form" th:case="'zygg'">
-                    <input name="id" th:value="${object.id}">
+                    <input name="id" type="hidden" th:value="${object.id}">
                     <div class="layui-form-item">
                         <label for="zyggbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -141,7 +141,7 @@
                 </form>
                 <!--                招行公告表单-->
                 <form class="layui-form" th:case="'zhgg'">
-                    <input name="id" th:value="${object.id}">
+                    <input name="id" type="hidden" th:value="${object.id}">
                     <div class="layui-form-item">
                         <label for="zhggbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -174,7 +174,7 @@
                 </form>
                 <!--                招行新闻表单-->
                 <form class="layui-form" th:case="'zhxw'">
-                    <input name="id" th:value="${object.id}">
+                    <input name="id" type="hidden" th:value="${object.id}">
                     <div class="layui-form-item">
                         <label for="zhxwbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -210,7 +210,7 @@
             <div class="layui-row" th:switch="${type}" th:if="${sign=='add'}">
                 <!--                特别推介表单-->
                 <form class="layui-form" th:case="'tbtj'">
-                    <input name="id" th:value="${ywkey}">
+                    <input name="id" type="hidden" th:value="${ywkey}">
                     <div class="layui-form-item">
                         <label for="tbtjbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -243,7 +243,7 @@
                 </form>
                 <!--                优惠快讯表单-->
                 <form class="layui-form" th:case="'yhkx'">
-                    <input name="id" th:value="${ywkey}">
+                    <input name="id" type="hidden" th:value="${ywkey}">
                     <div class="layui-form-item">
                         <label class="layui-form-label">
                             <span class="x-red">*</span>所在分类
@@ -290,7 +290,7 @@
                 </form>
                 <!--                重要公告表单-->
                 <form class="layui-form" th:case="'zygg'">
-                    <input name="id" th:value="${ywkey}">
+                    <input name="id" type="hidden" th:value="${ywkey}">
                     <div class="layui-form-item">
                         <label for="zyggbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -323,7 +323,7 @@
                 </form>
                 <!--                招行公告表单-->
                 <form class="layui-form" th:case="'zhgg'">
-                    <input name="id" th:value="${ywkey}">
+                    <input name="id" type="hidden" th:value="${ywkey}">
                     <div class="layui-form-item">
                         <label for="zhggbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -356,7 +356,7 @@
                 </form>
                 <!--                招行新闻表单-->
                 <form class="layui-form" th:case="'zhxw'">
-                    <input name="id" th:value="${ywkey}">
+                    <input name="id" type="hidden" th:value="${ywkey}">
                     <div class="layui-form-item">
                         <label for="zhxwbt" class="layui-form-label">
                             <span class="x-red">*</span>标题

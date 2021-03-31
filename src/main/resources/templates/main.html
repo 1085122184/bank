@@ -569,13 +569,13 @@
                         <tbody>
                         <tr>
                             <td class="liLeft" th:each="zygg:${zyggList}" th:if="${zygg.id%2==0}" >
-                                <a target="_blank" th:text="${zygg.bt}" cname="重要公告" oname="关于调整相关服务项目的通告" otype="文字链接" title="关于调整相关服务项目的通告" href="http://www.cmbchina.com/main/noticeinfo.aspx?guid=fdd5212b-aac7-4a56-ba78-7a0d20555e36" class="red">
+                                <a target="_blank" th:text="${zygg.bt}" cname="重要公告" style="cursor: pointer" title="关于调整相关服务项目的通告" th:id="${zygg.id}" onclick="ggchangeUrl(this)" class="red">
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td class="liLeft" th:each="zygg:${zyggList}" th:if="${zygg.id%2!=0}">
-                                <a target="_blank"  th:text="${zygg.bt}" cname="重要公告" oname="关于调整相关服务项目的通告" otype="文字链接" title="关于调整相关服务项目的通告" href="http://www.cmbchina.com/main/noticeinfo.aspx?guid=fdd5212b-aac7-4a56-ba78-7a0d20555e36" class="red">
+                                <a target="_blank"  th:text="${zygg.bt}" cname="重要公告" style="cursor: pointer" title="关于调整相关服务项目的通告" th:id="${zygg.id}" onclick="ggchangeUrl(this)" class="red">
                                 </a>
                             </td>
                         </tr>
@@ -1790,7 +1790,7 @@
                                 <tbody th:each="zhxw:${zhxwList}">
                                 <tr>
                                     <td>
-                                        <a target="_blank" th:text="'·'+${zhxw.bt}" href="http://www.cmbchina.com/cmbinfo/news/newsinfo.aspx?guid=5a036afd-a855-4f0e-b858-e39a59918fd3"></a>
+                                        <a target="_blank" th:id="${zhxw.id}" th:text="'·'+${zhxw.bt}" onclick="xwchangeUrl(this)" style="cursor: pointer"></a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1979,6 +1979,15 @@
         </tbody></table>
 
     <script language="javascript">
+        function xwchangeUrl(obj) {
+            window.open("/index/title?id="+obj.id+"&type=zhxw")
+        }
+        function ggchangeUrl(obj) {
+            window.open("/index/title?id="+obj.id+"&type=zygg")
+        }
+        function lychangeUrl(obj) {
+            window.open("/index/title?id="+obj.id+"&type=lyfk")
+        }
         function AddFavorite(sURL, sTitle)
         {
             try
