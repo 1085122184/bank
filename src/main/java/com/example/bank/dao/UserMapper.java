@@ -3,6 +3,8 @@ package com.example.bank.dao;
 import com.example.bank.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
     /**
@@ -54,4 +56,6 @@ public interface UserMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(User record);
+
+    List<User> selectAll();
 }

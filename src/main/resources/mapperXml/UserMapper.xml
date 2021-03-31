@@ -33,6 +33,11 @@
       from USER
       where username = #{username,jdbcType=INTEGER}
     </select>
+    <select id="selectAll" resultType="com.example.bank.entity.User">
+      select
+      <include refid="Base_Column_List" />
+      from USER
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     <!--
       WARNING - @mbggenerated

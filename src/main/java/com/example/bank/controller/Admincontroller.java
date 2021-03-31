@@ -4,6 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import com.example.bank.entity.*;
 import com.example.bank.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,8 @@ public class Admincontroller {
     ZhggService zhggService;
     @Autowired
     ZhxwService zhxwService;
+    @Autowired
+    UserService userService;
 
     @RequestMapping("adminLogin")
     public String adminLogin(){
@@ -66,6 +69,10 @@ public class Admincontroller {
                 map.put("type",type);
                 map.put("list",zhxwService.getList());
                 break;
+            case "yhtj":
+                map.put("type",type);
+                map.put("list",userService.getList());
+                break;
         }
         return "list";
     }
@@ -96,6 +103,12 @@ public class Admincontroller {
                 break;
         }
         return "add";
+    }
+
+    @RequestMapping("yhtjAdd")
+    @ResponseBody
+    public int yhtjAdd(@RequestBody User user){
+        return userService.save(user);
     }
 
     @RequestMapping("tbtjAdd")
