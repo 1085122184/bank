@@ -1,13 +1,13 @@
 package com.example.bank.controller;
 
-import com.example.bank.service.TbtjService;
-import com.example.bank.service.YhkxService;
-import com.example.bank.service.ZhxwService;
-import com.example.bank.service.ZyggService;
+import com.example.bank.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller
 public class MainController {
@@ -19,7 +19,10 @@ public class MainController {
     YhkxService yhkxService;
     @Autowired
     ZhxwService zhxwService;
-
+    @Autowired
+    ZhggService zhggService;
+    @Autowired
+    FjService fjService;
 
     @RequestMapping("/index")
     public String main(ModelMap modelMap){
@@ -27,6 +30,7 @@ public class MainController {
         modelMap.put("zyggList",zyggService.getListFour());
         modelMap.put("yhkxList",yhkxService.getList());
         modelMap.put("zhxwList",zhxwService.getList());
+        modelMap.put("zhggList",zhggService.getList());
         return "main";
     }
 
@@ -39,13 +43,18 @@ public class MainController {
             case "zygg":
                 modelMap.put("object",zyggService.getDetail(id));
                 break;
+            case "zhgg":
+                modelMap.put("object",zhggService.getDetail(id));
+                modelMap.put("fjList",fjService.getFjList(id));
+                break;
         }
         modelMap.put("type",type);
         return "zhxw";
     }
 
-    @RequestMapping("/test")
-    public String file(ModelMap modelMap){
-        return "index";
+
+    @RequestMapping("/index/getFj")
+    public void file(Integer id, HttpServletResponse response) throws IOException {
+        fjService.downloadWj(id,response);
     }
 }

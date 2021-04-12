@@ -501,9 +501,9 @@
                     &nbsp; &nbsp;当前位置：&nbsp;
                     <a id="content_NavigationLink1_main" href="http://www.cmbchina.com/">招商银行</a>  &gt;
                     <a id="content_NavigationLink1_parentPageInfo"></a>
-                    <a  th:case="'zhxw'"></a> 招行新闻
-                    <a  th:case="'zygg'"></a> 重要公告
-                    <a  th:case="'lyfk'"></a> 留言反馈
+                    <a  th:case="'zhxw'">招行新闻</a>
+                    <a  th:case="'zygg'">重要公告</a>
+                    <a  th:case="'lyfk'">留言反馈</a>
                 </div>
             </div>
 
@@ -559,14 +559,52 @@
                     }
                 })
             </script>
+            <div th:switch="${type}">
+                <div id="column_content" th:case="'lyfk'">
+                    <div class="left">
+                        <div class="pan-btn">
+                            <div class="fl">
+                                请勿在问题栏中输入密码
+                            </div>
+                        </div>
+                        <div class="pan-textarea">
+                            <textarea id="txtQuestion" class="txt-muti TextWater" rows="20" cols="80" watertext="请输入您要咨询的业务，尽量使用简洁关键字提问，以便快速准确为您解答。（">请输入您要咨询的业务，尽量使用简洁关键字提问，以便快速准确为您解答。</textarea>
+                        </div>
+                        <div class="pan-send">
+                            <div class="pan-send-left">
+                                客服热线：<span>95555</span>
+                                （信用卡：<span>400-820-5555</span>）
+                                <button onclick="sameScreenToolTest();return false" id="test-screen-tool" style="display: none;">
+                                    工具栏测试
+                                </button>
+                                <button id="test-send-image" onclick="sendImageTest();return false" style="display: none;">
+                                    测试
+                                </button>
+                                <span id="test-brower-version" style="display: none;"></span>
+                            </div>
 
-
-            <div id="column_content">
-                <div class="c_header">
-                    <span th:text="${object.bt}"></span></div>
-                <div class="c_content">
-                    <div class="infodiv">
-                        <p th:text="${object.zw}"></p>
+                            <div class="pan-send-right">
+                                <input id="btnSend" type="button" class="btn-send" value="留 言" title="Ctrl+Enter" onclick="liuyan()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="column_content" th:case="zhgg">
+                    <div class="c_header">
+                        <span th:text="${object.bt}"></span></div>
+                    <div class="c_content">
+                        <div class="infodiv" th:each="fj:${fjList}">
+                            <a style="cursor: pointer;color: blue" th:text="${fj.filename}+'(点击下载)'"  th:id="${fj.id}" onclick="downloadFj(this)"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="column_content" th:case="*">
+                    <div class="c_header">
+                        <span th:text="${object.bt}"></span></div>
+                    <div class="c_content">
+                        <div class="infodiv">
+                            <p th:text="${object.zw}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -712,6 +750,12 @@
         </tbody></table>
 
     <script language="javascript">
+        function downloadFj(obj) {
+            window.location.href="/index/getFj?id="+obj.id;
+        }
+        function liuyan(){
+            window.location.href="/index"
+        }
         function AddFavorite(sURL, sTitle)
         {
             try
