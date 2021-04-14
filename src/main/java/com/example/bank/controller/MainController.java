@@ -47,6 +47,10 @@ public class MainController {
                 modelMap.put("object",zhggService.getDetail(id));
                 modelMap.put("fjList",fjService.getFjList(id));
                 break;
+            case "yhkx":
+                modelMap.put("object",yhkxService.getDetail(id));
+                modelMap.put("fjList",fjService.getFjList(id));
+                break;
         }
         modelMap.put("type",type);
         return "zhxw";

@@ -1145,7 +1145,7 @@
                                 <tbody th:each="yhkxList:${yhkxList}">
                                 <tr>
                                     <td >
-                                        <a th:if="${yhkxList.pid==1}" th:text="'·'+${yhkxList.bt}" target="_blank" href="http://www.cmbchina.com/Personal/Promotion/PrmotionInfo.aspx?guid=56f7616b-7445-4fbf-990f-c38e21316db7"></a>
+                                        <a th:if="${yhkxList.pid==0}" th:id="${yhkxList.id}" style="cursor: pointer" th:text="'·'+${yhkxList.bt}" target="_blank"  onclick="yhchangeUrl(this)"></a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1167,7 +1167,7 @@
                                 <tbody th:each="yhkxList:${yhkxList}">
                                 <tr>
                                     <td >
-                                        <a th:if="${yhkxList.pid==2}" th:text="'·'+${yhkxList.bt}" target="_blank" href="http://www.cmbchina.com/Personal/Promotion/PrmotionInfo.aspx?guid=56f7616b-7445-4fbf-990f-c38e21316db7"></a>
+                                        <a th:if="${yhkxList.pid==1}" th:id="${yhkxList.id}" style="cursor: pointer" th:text="'·'+${yhkxList.bt}" target="_blank" onclick="yhchangeUrl(this)"></a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1244,6 +1244,9 @@
                 }
                 function lychangeUrl(obj) {
                     window.open("/index/title?id="+obj.id+"&type=lyfk")
+                }
+                function yhchangeUrl(obj) {
+                    window.open("/index/title?id="+obj.id+"&type=yhkx")
                 }
 
                 var finaIndex = 1;
@@ -1774,15 +1777,15 @@
                                     <td>·<a href="" target="_blank" cname="公司业务" oname="企业年金" otype="文字链接">企业年金</a></td></tr>
                                 <tr>
                                     <td>·<a href="" target="_blank" cname="公司业务" oname="资产托管" otype="文字链接">资产托管</a></td>
-                                    <td>·<a href=" target="_blank" cname="公司业务" oname="离岸业务" otype="文字链接">离岸业务</a></td></tr>
+                                    <td>·<a href="" target="_blank" cname="公司业务" oname="离岸业务" otype="文字链接">离岸业务</a></td></tr>
                                 <tr>
                                     <td>·<a href="" target="_blank" cname="公司业务" oname="融资租赁" otype="文字链接">融资租赁</a></td>
-                                    <td>·<a href=" target="_blank" cname="公司业务" oname="同业金融" otype="文字链接">同业金融</a></td></tr></tbody></table></div>
+                                    <td>·<a href="" target="_blank" cname="公司业务" oname="同业金融" otype="文字链接">同业金融</a></td></tr></tbody></table></div>
                         <div class="m_bussiness_more"><a href="" target="_blank" cname="公司业务" oname="more" otype="文字链接"><img height="19" th:src="@{images/more.jpg}" width="49" border="0"></a></div></div>
                 </div>
             </div>
 
-
+s
             <div class="c_mid_con">
                 <h2 class="m_head">
                     <span>信用卡</span></h2>

@@ -68,7 +68,7 @@
                             <span class="x-red">*</span>链接地址
                         </label>
                         <div class="layui-input-inline">
-                            <input th:value="${object.url}" type="text" id="tbtjurl" name="url" required="" lay-verify="phone"
+                            <input th:value="${object.url}" type="text" id="tbtjurl" name="url" required="" lay-verify="required"
                                    autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-form-mid layui-word-aux">
@@ -148,7 +148,7 @@
                             <span class="x-red">*</span>正文内容
                         </label>
                         <div class="layui-input-inline">
-                            <textarea th:value="${object.zw}" id="zyggzw" name="zw" required="" lay-verify="phone"
+                            <textarea th:value="${object.zw}" id="zyggzw" name="zw" required=""
                                       autocomplete="off" class="layui-textarea"></textarea>
                         </div>
                         <div class="layui-form-mid layui-word-aux">
@@ -273,7 +273,7 @@
                             <span class="x-red">*</span>链接地址
                         </label>
                         <div class="layui-input-inline">
-                            <input  type="text" id="tbtjurl" name="url" required="" lay-verify="phone"
+                            <input  type="text" id="tbtjurl" name="url" required=""
                                    autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-form-mid layui-word-aux">
@@ -335,7 +335,7 @@
                 </form>
                 <!--                重要公告表单-->
                 <form class="layui-form" th:case="'zygg'">
-                    <input name="id" type="hidden" th:value="${ywkey}">
+<!--                    <input name="id" type="hidden" th:value="${ywkey}">-->
                     <div class="layui-form-item">
                         <label for="zyggbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -353,7 +353,7 @@
                             <span class="x-red">*</span>正文内容
                         </label>
                         <div class="layui-input-inline">
-                            <textarea id="zyggzw" name="zw" required="" lay-verify="phone"
+                            <textarea id="zyggzw" name="zw" required="" lay-verify="required"
                                       autocomplete="off" class="layui-textarea"></textarea>
                         </div>
                         <div class="layui-form-mid layui-word-aux">
@@ -401,7 +401,7 @@
                 </form>
                 <!--                招行新闻表单-->
                 <form class="layui-form" th:case="'zhxw'">
-                    <input name="id" type="hidden" th:value="${ywkey}">
+<!--                    <input name="id" type="hidden" th:value="${ywkey}">-->
                     <div class="layui-form-item">
                         <label for="zhxwbt" class="layui-form-label">
                             <span class="x-red">*</span>标题
@@ -454,7 +454,7 @@
                 elem: '#test7'
                 ,url: 'file/uploadFile?ywkey='+ywkey+"&path="+type
                 ,accept: 'file'
-                ,size: 6000 //限制文件大小，单位 KB
+                ,size: 600000 //限制文件大小，单位 KB
                 ,done: function(res){
                     layer.msg(res.msg);
                 }
@@ -465,19 +465,19 @@
                 $ = layui.jquery;
                 var form = layui.form, layer = layui.layer;
                 //自定义验证规则
-                form.verify({
-                    nikename: function(value) {
-                        if (value.length < 5) {
-                            return '昵称至少得5个字符啊';
-                        }
-                    },
-                    pass: [/(.+){6,12}$/, '密码必须6到12位'],
-                    repass: function(value) {
-                        if ($('#L_pass').val() != $('#L_repass').val()) {
-                            return '两次密码不一致';
-                        }
-                    }
-                });
+                // form.verify({
+                //     nikename: function(value) {
+                //         if (value.length < 5) {
+                //             return '昵称至少得5个字符啊';
+                //         }
+                //     },
+                //     pass: [/(.+){6,12}$/, '密码必须6到12位'],
+                //     repass: function(value) {
+                //         if ($('#L_pass').val() != $('#L_repass').val()) {
+                //             return '两次密码不一致';
+                //         }
+                //     }
+                // });
 
                 //监听提交
                 form.on('submit(add)',

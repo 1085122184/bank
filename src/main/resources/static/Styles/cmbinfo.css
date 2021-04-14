@@ -1,0 +1,169 @@
+body
+{
+	margin:0px; font-size:12px; font-family:宋体;
+}
+
+* { font-size:12px; }
+
+ul, li { list-style:none; margin:0px; padding:0px; }
+
+a:link { color:#666; text-decoration:none; } 
+a:visited { color:#666; text-decoration:none; } 
+a:hover { color:red; text-decoration:none; } 
+
+.gray { color:#333; text-decoration:none; } 
+a.gray:link { color:#333; text-decoration:none; } 
+a.gray:visited { color:#333; text-decoration:none; } 
+a.gray:hover { color:red; text-decoration:none; } 
+
+img{border:0;overflow:hidden;}
+
+/*begin 页面框架*/
+#container{width:950px;margin:0  auto 8px auto;}
+#column_main{width:723px;float:right; margin:0px;} 
+#column_center{width:502px;float:left;height:auto;overflow:hidden;margin:8px 0px 0px 0px;}
+#column_right{width:209px;float:right;}
+#column_content{width:723px;float:right;margin:8px 0px 0px 0px;} 
+#column_left{width:209px;float:left; border:1px solid #ccc;  border-top:none}
+
+#column_main_content{height:auto;overflow:hidden;}
+#column_main_left{width:723px;float:left; margin:0px;}
+#column_main_right{width:209px;float:right; margin:0px;}
+#column_main_leftmenu{width:209px;float:left; border:1px solid #ccc;  border-top:none;margin:8px 10px 0px 0px;}
+/* end 页面框架*/
+ .common_head{margin:0px;height:32px;width:500px;line-height:32px;border-left:1px solid #ccc;border-right:1px solid #ccc;background: #f1f1f1 url(../images/con_bg.gif) repeat-x;}
+.common_head .head_left{float:left;width:387px;}
+.common_head .arrow{float:left;margin:8px 0px 0px 24px;width:12px;height:12px;background: url(../images/arrow.jpg) no-repeat;}
+.common_head h2{font-size:14px;float:left;margin:0px 0px 0px 12px;  }
+.common_head .head_right{float:left;width:332px;}
+ 
+ 
+.c_header{ height:33px;line-height:32px;width:723px; background:url(../images/main_content_bg.jpg);}
+.c_header span{ margin-left:45px; float:left;font-size:13px; margin-top:1px;  vertical-align:baseline;color:Black;font-weight:bold; font-size:14px}
+.c_content{border:1px solid #ccc;height:auto!important; min-height:500px; *height:500px;color:#333;padding:0px;}
+.c_content .infodiv { width:96%; margin:12px auto; line-height:24px;}
+
+.c_list{margin: 16px 0px 8px 16px;height:auto!important; }
+.c_list a:link { color:#333; }
+.c_list a:visited { color:#333; }
+.c_list a:hover { color:red; }
+.c_list li{width:680px;height:24px; line-height:24px;margin-top:4px;  border-bottom:1px   dotted #ccc;}
+.c_list .c_date{float:right;}
+.c_title{float:left;}
+
+.cm_header{background:#f1f1f1;width:680px;margin-top:8px;}
+.cm_header span{ color:#cc0000;margin-left:20px;}
+
+.location{margin:0px auto 8px auto;}
+ 
+.l_menu_head{ width:211px;height:33px;background:url(../images/cmbinfo_menuhead.gif) no-repeat; }
+.l_menu_content{height:943px;  border:1px solid #cccccc;}
+.l_menu_content li{list-style:none;width:209px;height:30px;background:#f3f3f3;border-bottom:1px solid #ccc;line-height:30px;}
+.l_menu_content li a{margin-left:8px;font-size:14px;}
+
+.l_menu_content a:link { color:#333;} 
+.l_menu_content a:visited { color:#333;} 
+.l_menu_content a:hover { color:red;} 
+
+.menu_tip{font-size:8px;margin-left:26px;}
+.red_banner{width:5px;height:30px;background:#d60000; float:left;}
+
+.menu_tip_cur a:link{color:#d11717;font-size:14px;}
+.menu_tip_cur a:visited{color:#d11717;font-size:14px;}
+.menu_tip_cur a:hover{color:#d11717;font-size:14px;}
+
+.menu_tip_cur{font-size:8px;margin-left:16px;margin-top:4px;}
+
+.center_con_news{width:502px;float:left;margin:0px 0px 0px 0px; background-color:#fff;}
+.center_con{width:502px;float:left;margin:8px 0px 0px 0px;}
+.center_con_head{float:left;margin:0px;width:502px;height:32px;background:url(../images/cmbinfo_content_bg.gif) no-repeat;}
+ 
+.center_con_info{float:left;width:500px; display:inline; height:160px;border:1px solid #ccc;}
+ 
+
+.con_img {margin:16px 0px 0px 20px;float:left;width:108px;height:108px;}
+.con_right{float:left;width:320px;margin:12px 0px 0px 12px ;}
+.con_list{margin:0px;width:320px;float:left;height:120px;word-wrap: break-word;word-break: break-all; overflow:hidden;}
+.con_list li{list-style:none;line-height:24px;color:#333;}
+.con_list li a{margin-left:0px; color:#333;}
+
+.con_list li a:link { color:#333; text-decoration:none; } 
+.con_list li a:visited { color:#333; text-decoration:none; } 
+.con_list li a:hover { color:red; text-decoration:none; } 
+
+.con_more{border:0px;float:right;margin:0px 0px 0px 8px;}
+ 
+
+/*begin 右侧用户控件*/
+.m_con{width:209px;margin-top:8px;float:left;}
+.m_con h2{padding-left:15px;margin:0px;height:27px;line-height:27px; font-size:14px;color:White;background:url(../images/main_func_title.jpg) no-repeat;}
+ 
+.m_con .m_con_info{margin:0;border:1px solid #ccc;float:left;width:207px;}
+.m_con_info ul{margin:8px 0px 4px 16px; }
+.m_con .m_con_info li{margin:2px;list-style:none;color:#666; }
+.m_con .m_con_info ul li a{margin-left:2px;}
+.m_con .m_con_info a.underline{text-decoration: underline;}
+.m_con .more{width:172px;margin:0px 0px 8px 8px;float:left;}
+.m_con .more a{float:right;}
+
+.m_con a:link { color:#333;} 
+.m_con a:visited { color:#333;} 
+.m_con a:hover { color:red;} 
+
+.m_con_websites{width:209px;margin:0px 0px 8px 0px;}
+.m_con_websites_head{width:209px;height:31px;background:url(../images/cmbinfo_branch.gif) no-repeat;margin:0;}
+.m_con_fortune_head{width:209px;height:31px;background:url(../images/cmbinfo_fortunemagazine.gif) no-repeat;margin:0;}
+
+.m_con_websites .m_con_info{border:1px solid #cccccc;}
+.m_con_websites .m_center{ text-align:center; margin:8px 0px 8px 0px; }
+.m_con_websites .more{width:168px; height:20px;margin:0px 0px 8px 8px; display:block;}
+.m_con_websites .more a{float:right;}
+
+.fortuneImg{margin:8px 0px 8px 0px;}
+ /* 更多图片 */
+.common_img_more{border:0px;width:49px;height:19px;}
+div.spacer{clear:both;}
+img{border:0px;}
+
+ 
+/*navlink*/
+.NavLink{ width:721px; height:28px; border:1px solid #cccccc; margin-bottom:4px; background-color:#F1F1F1}
+.NavLinkCon{width:685px; height:28px;margin-left:30px; line-height:28px; color:#696969}
+.NavLink a:link {text-decoration:none; color:#696969} 
+.NavLink a:visited {text-decoration:none;  color:#696969} 
+.NavLink a:hover{text-decoration:none; }
+
+
+
+/*Common NavLink*/
+.NavLinkHeader{ width:209px; height:34px; background:url(../images/info_menu_title.gif); font-weight:bold; line-height:34px}
+.NavLinkHeader span{margin-left:50px; font-size:14px}
+.NavLinkContent{}
+.NavLinkContent .txtspan{font-size:9px;margin-left:50px; float:left; line-height:30px}
+.NavLinkContent .redspan{ width:8px; height:28px; background-color:#D60000; display:block; vertical-align:middle; float:left}
+.NavLinkContent .subtxtspan{font-size:9px;margin-left:35px; float:left; height:29px; line-height:29px}
+
+.NavLinkContent .page{float:left;width:209px;height:30px;line-height:30px;background:url(../images/info_page_bg.gif) no-repeat;}
+.NavLinkContent .page_selected{float:left;width:209px;height:30px;line-height:30px;background:url(../images/info_pageselected_bg.gif) no-repeat}
+
+.NavLinkContent .directory{float:left;width:209px;height:30px;line-height:30px; background:url(../images/info_directory_bg.gif) no-repeat; overflow:hidden}
+.NavLinkContent .directory_selected{float:left;width:209px;height:30px;line-height:30px; background:url(../images/info_directory_hover_bg.gif) no-repeat; overflow:hidden}
+
+.NavLinkContent .subpage{float:left;width:209px;height:30px; background-color:#ffffff; border-bottom:none;}
+.NavLinkContent .subpage_selected{float:left;width:209px;height:30px; background-color:#ffffff;border-bottom:none;}
+
+.NavLinkContent .subpage_selected span a:link{ color:red; text-decoration:none} 
+.NavLinkContent .subpage_selected span  a:visited { color:red;text-decoration:none} 
+.NavLinkContent .subpage_selected span  a:hover { color:red;text-decoration:none} 
+
+
+
+.NavLinkContent a:link { color:#333; text-decoration:none} 
+.NavLinkContent a:visited { color:#333;text-decoration:none} 
+.NavLinkContent a:hover { color:red;text-decoration:none} 
+
+.NavLinkSpace{float:left;width:209px; border:1px solid #cccccc;height:600px;}
+
+.toolboxdiv .more,.realinfodiv .more{width:168px; height:20px;margin:0px 0px 8px 8px; display:block;}
+.toolboxdiv .more a,.realinfodiv .more a{float:right;}
+.m_center{ text-align:center; margin:8px 0px 8px 0px; }

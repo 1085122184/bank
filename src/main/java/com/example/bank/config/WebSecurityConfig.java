@@ -61,7 +61,7 @@ public class WebSecurityConfig {
 
         public static void main(String[] args) {
             BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-            String encodedPassword = bCryptPasswordEncoder.encode("333".trim());
+            String encodedPassword = bCryptPasswordEncoder.encode("123");
             System.out.println(encodedPassword);
         }
     }

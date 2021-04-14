@@ -494,7 +494,7 @@
 
 
     <div id="container">
-        <div id="column_main">
+        <div id="column_main" style="margin-right: 150px">
             <div class="location">
 
                 <div id="NavigationLinkDiv" style=" height:28px; border:1px solid #cccccc;background-color:#F1F1F1; line-height:28px; color:#696969" th:switch="${type}">
@@ -594,7 +594,17 @@
                         <span th:text="${object.bt}"></span></div>
                     <div class="c_content">
                         <div class="infodiv" th:each="fj:${fjList}">
-                            <a style="cursor: pointer;color: blue" th:text="${fj.filename}+'(点击下载)'"  th:id="${fj.id}" onclick="downloadFj(this)"></a>
+                            <a style="cursor: pointer;color: blue" th:text="${object.bt}+'(点击下载)'"  th:id="${fj.id}" onclick="downloadFj(this)"></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="column_content" th:case="yhkx">
+                    <div class="c_header">
+                        <span th:text="${object.bt}"></span></div>
+                    <div class="c_content">
+                        <div class="infodiv" th:each="fj:${fjList}">
+                            <img th:src="'http://localhost:1111/index/getFj?id='+${fj.id}" border="0" />
+<!--                            <a style="cursor: pointer;color: blue" th:text="${object.bt}+'(点击下载)'"  th:id="${fj.id}" onclick="d/index/getFj?idownloadFj(this)"></a>-->
                         </div>
                     </div>
                 </div>
